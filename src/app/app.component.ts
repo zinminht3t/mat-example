@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
 
+interface Image {
+  imageURL: string;
+  time: string;
+
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +13,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'mat-example';
+
+  images: Image[] = [];
+
+  processImage(imageURL: string) {
+    console.log('blah blah');
+    this.images.unshift({
+      imageURL: imageURL,
+      time: (new Date().toString()),
+    });
+  }
 }
